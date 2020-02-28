@@ -1,0 +1,6 @@
+<div *ngIf="status">
+    <app-review *ngFor="let n of reviews" [review]="n"></app-review>
+</div>
+<div *ngIf="!status">
+    You need to login to view reviews
+</div>
