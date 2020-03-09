@@ -97,4 +97,58 @@ export class CourseComponent implements OnInit {
 
 ```
 
+### Directives
 
+
+#### Directives overview
+There are three kinds of directives in Angular:
+
+* __Components—directives__ with a template.
+* __Structural directives__—change the DOM layout by adding and removing DOM elements.
+* __Attribute directives__—change the appearance or behavior of an element, component, or another directive.
+
+__Components__ are the most common of the three directives. You saw a component for the first time in the Getting Started tutorial.
+
+__Structural Directives__ change the structure of the view. Two examples are NgFor and NgIf. Learn about them in the Structural Directives guide.
+
+__Attribute directives__ are used as attributes of elements. The built-in NgStyle directive in the Template Syntax guide, for example, can change several element styles at the same time.
+
+__Component Directive__
+
+  Component is the most common of the directives. In fact every component itself is
+  a component directive.
+
+__Structural Directive__
+
+  Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.
+
+As with other directives, you apply a structural directive to a host element. The directive then does whatever it's supposed to do with that host element and its descendants.
+
+Structural directives are easy to recognize. An asterisk (*) precedes the directive attribute name as in this example.
+
+for exmple
+
+```
+   <li *ngFor="let x of courses">{{x}}</li>
+```
+ 
+ assume courses=["Java","C++","SQL"];
+
+ The above code will generate three li with Java,SQL and C++
+
+ ```
+    <div *ngIf="show"> </div>
+ ```
+
+    The division will be shown if and only if show is true
+
+### Attribute Directives
+
+  Attribute directives changes the behaviour of the target element
+
+  Attribute directives are further classified 
+
+   * Input Directives
+   * Output Directives
+   * Input Output Directives
+  
