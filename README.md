@@ -47,3 +47,54 @@ src/	|Source files for the root-level application project.
 node_modules/	| Provides npm packages to the entire workspace. Workspace-wide node_modules dependencies are visible to all projects.
 tsconfig.json	| Default TypeScript configuration for projects in the workspace.
 tslint.json |	Default TSLint configuration for projects in the workspace
+
+
+## Angular Building Blocks
+
+### Modules
+
+A module is a container for a group of related components. Every angular app has at least one module which we call app module. As our application grows, we may want to break our modules into smaller, more maintainable modules. And as the application grows, we need to divide our app module into sub smaller modules and each module is responsible for a specific section. It has related components inside them.
+
+The module details will usually be in file called app.module.ts
+
+###  Component
+
+Components are the most basic building block of an UI in an Angular application. An Angular application is a tree of Angular components. Angular components are a subset of directives. Unlike directives, components always have a template and only one component can be instantiated per an element in a template.
+
+Components are like the basic building block in an Angular application. Components are defined using the @component decorator. A component has a __selector, template, style and other properties__, using which it specifies the metadata required to process the component.
+
+#### Creating component using cli
+
+To create a component using cli use the following command
+
+```
+ng g c course
+```
+
+After component creation , it appears like this
+
+```
+
+import { Component, OnInit, Input } from '@angular/core';
+import { course } from 'src/app/model/course';
+
+
+@Component({
+  selector: 'app-course',
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.css']
+})
+export class CourseComponent implements OnInit {
+
+ @Input('course') current:course;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+}
+
+```
+
+
